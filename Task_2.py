@@ -73,7 +73,7 @@ for k,v in data.items():
                     ListofRatesofGBP.append(n)
                     break
 
-#Creating dictionary of dates and there corresponding INR values(this dictionary is unsorted)
+#Creating dictionary of dates and there corresponding GBP values(this dictionary is unsorted)
 for i in range(0,cntDate):
     d2[ListofDatesofGBP[i]]=ListofRatesofGBP[i]
 print(d2)
@@ -83,7 +83,7 @@ for key in sorted(d2):
     dateRateofGBP[key]=d2[key]
 print(dateRateofGBP)
 
-#Making two separate lists of date and there corresponding inr values
+#Making two separate lists of date and there corresponding GBP values
 for k in dateRateofGBP:
     date1.append(k)
     RateGBP.append(dateRateofGBP[k])
@@ -97,12 +97,12 @@ fig,ax1=pl.subplots()
 ax1.plot(dateList, RateINR, color='blue', linewidth = 1, marker='o', markerfacecolor='black', markersize=5)
 pl.xticks(rotation=90)
 ax1.set_xlabel("Dates")
-ax1.set_ylabel('INR')
-pl.title("Plot the graph of INR and GBP exchange rate against EUR from 1 Jan 2019 to 31 Jan 2019(T-2)")
+ax1.set_ylabel('INR',color="blue")
+pl.title("Graph of INR and GBP exchange rate against EUR from 1 Jan 2019 to 31 Jan 2019(T-2)")
 
 #plotting for GBP
 ax2=ax1.twinx()
-ax2.set_ylabel("GBP")
+ax2.set_ylabel("GBP",color="red")
 ax2.plot(dateList,RateGBP,color='red', linewidth = 1, marker='o', markerfacecolor='black', markersize=5)
 
 fig.tight_layout()
